@@ -157,10 +157,8 @@ export async function runFeedbackLoopPipeline(
         {
           generated_post_id: r.post_id,
           channel: r.channel,
-          // ID genérico en Graph (sirve para IG y FB):
-          meta_post_id: r.ig_media_id,
-          // Compatibilidad con columna actual:
-          ig_media_id: r.ig_media_id,
+          meta_post_id: r.ig_media_id, // campo genérico para Graph
+          ig_media_id: r.ig_media_id,   // compatibilidad con la columna actual
           metrics: r.metrics as any,
           collected_at: new Date().toISOString(),
         } as any,
